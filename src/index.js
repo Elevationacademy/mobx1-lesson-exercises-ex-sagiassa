@@ -9,9 +9,13 @@ import { ShoppingList } from '../src/stores/ShoppingList'
 
 
 // let potatoes = new Item("Potatoes")
-// let groceryList = new ShoppingList()
-// groceryList.list.push(potatoes)
-
+// let onione = new Item("Onione")
+// let pineapple = new Item("Pineapple")
+// groceryList.addItem('potatoes')
+// groceryList.list.push(onione)
+// groceryList.list.push(pineapple)
 // Use the prop "store" for your store
-ReactDOM.render(<App />, document.getElementById('root'));
+
+let groceryList = new ShoppingList()
+ReactDOM.render(<App store={groceryList}/>, document.getElementById('root'));
 registerServiceWorker();

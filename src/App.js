@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { observer } from 'mobx-react'
 import './App.css';
 import Item from './components/Item';
-
+import DevTools from 'mobx-react-devtools';
 
 @observer
 class App extends Component {
@@ -15,13 +15,13 @@ class App extends Component {
     this.props.store.addItem(this.state.newItem)
   }
   render() {
+    // console.log(this.props.store.list)
     return (
       <div className="App">
+        < DevTools />
         <input onChange = {this.handleChange}/>
-        <button onClick = {this.addItem}>Add</button>
-      {/* your code here
-          You should map each grocery item into an Item component  
-      */}  
+        <button onClick = {this.addItem}> Add</button>
+      {this.props.store.list.map(g => <Item item={g} store={this.props.store} />)} 
       </div>
     );
   }
